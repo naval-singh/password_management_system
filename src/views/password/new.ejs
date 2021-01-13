@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <% if(messege){ %>
+    <div class="alert alert-primary" role="alert"><%= messege %></div>
+    <% } %>
+    <div style="max-width: 700px; margin: auto;">
+        <h2>Add New Password</h2>
+        <div class="border p-4" style="border-radius: 5px;">
+            <form action="/password/new" method="POST">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Category Name</label>
+                        <select name="categoryName" id="category" class="form-control" required>
+                            <option>Choose Category</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Work Space</label>
+                        <input type="text" class="form-control" name="workSpace" placeholder="enter work space" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password Details</label>
+                    <textarea name="passwordDetails" id="editor1"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Password</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

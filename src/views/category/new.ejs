@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <% if(messege){ %>
+    <div class="alert alert-primary" role="alert"><%= messege %></div>
+    <% } %>
+    <div style="max-width: 500px; margin: auto;">
+        <h2>Add New Category</h2>
+        <div class="border p-4" style="border-radius: 5px;">
+            <form action="/category/new" method="POST">
+                <div class="form-group">
+                    <label>Category Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="enter category" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Category</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
